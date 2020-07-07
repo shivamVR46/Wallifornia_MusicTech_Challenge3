@@ -14,13 +14,10 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/getSongByName", function(req, res) {
-  var speech =
-    req.body.queryResult &&
-    req.body.queryResult.parameters &&
-    req.body.queryResult.parameters.song
-      ? req.body.queryResult.parameters.song
-      : "Seems like some problem. Speak again.";
-  
+
+    var speech = req.body.queryResult && req.body.queryResult.parameters && req.body.queryResult.parameters.song ?
+                 new Audio('file:///D://file_example_MP3_700KB.mp3') : "No such song";
+
   var speechResponse = {
     google: {
       expectUserResponse: true,
@@ -35,8 +32,8 @@ restService.post("/getSongByName", function(req, res) {
       }
     }
   };
-  
-  return res.json({
+
+  return res({
     payload: speechResponse,
     //data: speechResponse,
     fulfillmentText: speech,

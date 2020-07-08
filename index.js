@@ -44,7 +44,7 @@ restService.post("/getSongByName", function(req, res) {
   // const speech = '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg"><desc>a cat purring</desc></audio></speak>';
   // const speech = "test 1.0"
   var speech ="";
-  var trackId="";
+  var trackId = "";
   request('https://api.deezer.com/track/3135553', function(err, res2, body) {
     //console.log('https://api.deezer.com/track/'+req.params.id);
     if (err) trackId = "error";
@@ -54,7 +54,8 @@ restService.post("/getSongByName", function(req, res) {
       //console.log(jsonObj['artist']['name']);
       //console.log(jsonObj['album']['title']);
       //console.log(jsonObj['preview']);
-      trackID =  "jsonObj[title]";
+      trackId =  "jsonObj[title]";
+      //return "abc";
     }
 });
 

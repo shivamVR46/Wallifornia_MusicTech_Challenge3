@@ -25,8 +25,10 @@ restService.post("/getSongByName", function(req, res) {
   switch(req.body.queryResult.parameters.song){
     case "music":
      speech1 = '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg"><desc>a cat purring</desc></audio></speak>';
+     break;
     case "other":     
      speech1 = '<speak><audio><desc>a cat purring</desc></audio></speak>';
+     break;
   }
 
 

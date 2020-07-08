@@ -17,6 +17,7 @@ restService.post("/getSongByName", function(req, res) {
 
 //  var speech = req.body.queryResult && req.body.queryResult.parameters && req.body.queryResult.parameters.song ?
 //                "Shivam" : "Sadiq";
+  print(req.body.queryResult.parameters);
 
   const speech = 
   '<speak><audio src="https://cdns-preview-b.dzcdn.net/stream/c-b2e0166bba75a78251d6dca9c9c3b41a-7.mp3"><desc>a cat purring</desc></audio></speak>';
@@ -29,7 +30,7 @@ restService.post("/getSongByName", function(req, res) {
 
   // speech = 'shivam';
 
-  var speechResponse = {
+  var speechResponse = {  +
     google: {
       expectUserResponse: true,
       richResponse: {
@@ -53,6 +54,8 @@ restService.post("/getSongByName", function(req, res) {
     source: "webhook-echo-sample"
   });
 });
+
+
 
 restService.listen(process.env.PORT || 8000, function() {
     console.log("Server up and listening");

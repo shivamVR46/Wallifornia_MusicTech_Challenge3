@@ -48,6 +48,7 @@ restService.post("/getSongByName", function(req, res) {
       break;
     case "describe too":
       speech =  '<speak>Track name : '+trackNameThree+' by Artist name : '+artistThree+' from Album : '+albumThree+' </speak>';
+      break;
     case "other":     
      speech = '<speak><audio src="https://cdns-preview-b.dzcdn.net/stream/c-b2e0166bba75a78251d6dca9c9c3b41a-7.mp3"><desc>deezer stream</desc></audio></speak>';
      break;

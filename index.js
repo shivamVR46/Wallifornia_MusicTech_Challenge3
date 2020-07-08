@@ -19,7 +19,7 @@ restService.post("/getSongByName", function(req, res) {
   //                new Audio('file:///D://file_example_MP3_700KB.mp3') : "No such song";
 
   const song = req.body.result.parameters.song.toLowerCase();
-  const speech = new Audio('file:///D://file_example_MP3_700KB.mp3');
+  const speech = new Audio('https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3');
   <speak>
     speech.play();
   </speak>

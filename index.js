@@ -20,11 +20,11 @@ restService.post("/getSongByName", function(req, res) {
   
   var speech ="";
 
-  switch(req.body.result.parameters.song.toLowerCase()){
+  switch(req.body.queryResult.parameters.song){
     case "music":
      speech = '<speak><audio src="https://cdns-preview-b.dzcdn.net/stream/c-b2e0166bba75a78251d6dca9c9c3b41a-7.mp3"><desc>a cat purring</desc></audio></speak>';
     case "other":     
-     speech = '<speak><audio ><desc>a cat purring</desc></audio></speak>';
+     speech = '<speak><audio><desc>a cat purring</desc></audio></speak>';
   }
   // '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg"><desc>a cat purring</desc></audio></speak>';
                //  new Audio('file:///D://file_example_MP3_700KB.mp3') ;

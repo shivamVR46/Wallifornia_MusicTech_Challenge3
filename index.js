@@ -15,23 +15,29 @@ restService.use(bodyParser.json());
 
 restService.post("/getSongByName", function(req, res) {
 
-    var speech = req.body.queryResult && req.body.queryResult.parameters && req.body.queryResult.parameters.song ?
-                 new Audio('file:///D://file_example_MP3_700KB.mp3') : "No such song";
+  // var speech = req.body.queryResult && req.body.queryResult.parameters && req.body.queryResult.parameters.song ?
+  //                new Audio('file:///D://file_example_MP3_700KB.mp3') : "No such song";
 
-  var speechResponse = {
-    google: {
-      expectUserResponse: true,
-      richResponse: {
-        items: [
-          {
-            simpleResponse: {
-              textToSpeech: speech
-            }
-          }
-        ]
-      }
-    }
-  };
+  const song = req.body.result.parameters.song.toLowerCase();
+  const speech = new Audio('file:///D://file_example_MP3_700KB.mp3');
+  <speak>
+    speech.play();
+  </speak>
+
+  // var speechResponse = {
+  //   google: {
+  //     expectUserResponse: true,
+  //     richResponse: {
+  //       items: [
+  //         {
+  //           simpleResponse: {
+  //             textToSpeech: speech
+  //           }
+  //         }
+  //       ]
+  //     }
+  //   }
+  // };
 
   return res.json({
     payload: speechResponse,
@@ -39,7 +45,7 @@ restService.post("/getSongByName", function(req, res) {
     fulfillmentText: speech,
     speech: speech,
     displayText: speech,
-    source: "TEST11-MASTER"
+    source : "webhook-echo-sample"
   });
 });
 

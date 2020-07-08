@@ -18,16 +18,16 @@ restService.post("/getSongByName", function(req, res) {
 //  var speech = req.body.queryResult && req.body.queryResult.parameters && req.body.queryResult.parameters.song ?
 //                "Shivam" : "Sadiq";
 
-  const speech = '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg"><desc>a cat purring</desc></audio></speak>';
+  // const speech = '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg"><desc>a cat purring</desc></audio></speak>';
   // const speech = "test 1.0"
-  // var speech1 ="";
+  var speech1 ="";
 
-  // switch(req.body.queryResult.parameters.song){
-  //   case "music":
-  //    speech1 = '<speak><audio src="https://cdns-preview-b.dzcdn.net/stream/c-b2e0166bba75a78251d6dca9c9c3b41a-7.mp3"><desc>a cat purring</desc></audio></speak>';
-  //   case "other":     
-  //    speech1 = '<speak><audio><desc>a cat purring</desc></audio></speak>';
-  // }
+  switch(req.body.queryResult.parameters.song){
+    case "music":
+     speech1 = '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg"><desc>a cat purring</desc></audio></speak>';
+    case "other":     
+     speech1 = '<speak><audio><desc>a cat purring</desc></audio></speak>';
+  }
 
 
   // '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg"><desc>a cat purring</desc></audio></speak>';

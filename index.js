@@ -25,20 +25,20 @@ restService.post("/getSongByName", function(req, res) {
 
   // speech = 'shivam';
 
-  // var speechResponse = {
-  //   google: {
-  //     expectUserResponse: true,
-  //     richResponse: {
-  //       items: [
-  //         {
-  //           simpleResponse: {
-  //             textToSpeech: speech
-  //           }
-  //         }
-  //       ]
-  //     }
-  //   }
-  // };
+  var speechResponse = {
+    google: {
+      expectUserResponse: true,
+      richResponse: {
+        items: [
+          {
+            simpleResponse: {
+              textToSpeech: speech
+            }
+          }
+        ]
+      }
+    }
+  };
 
   return res.json({
     payload: speechResponse,
@@ -46,7 +46,7 @@ restService.post("/getSongByName", function(req, res) {
     fulfillmentText: speech,
     speech: speech,
     displayText: speech,
-    source : "webhook-echo-sample"
+    source: "webhook-echo-sample"
   });
 });
 

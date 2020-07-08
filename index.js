@@ -39,12 +39,13 @@ restService.post("/getSongByName", function(req, res) {
   // const speech = '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg"><desc>a cat purring</desc></audio></speak>';
   // const speech = "test 1.0"
   var speech ="";
-  var trackId = getJSON(err,wowUsage);
+
+  var track = "One More Time";
+  var artist = "Daft Punk";
+  var album = "Discovery";
+  var track = "https://cdns-preview-e.dzcdn.net/stream/c-e77d23e0c8ed7567a507a6d1b6a9ca1b-9.mp3";
   
   
-  // getJSON(function(err, wowUsage) {    
-  //   trackId =  wowUsage;
-  // });
 
   switch(req.body.queryResult.parameters.song){
     case "music":
@@ -56,6 +57,12 @@ restService.post("/getSongByName", function(req, res) {
     case "other":     
      speech = '<speak><audio src="https://cdns-preview-b.dzcdn.net/stream/c-b2e0166bba75a78251d6dca9c9c3b41a-7.mp3"><desc>deezer stream</desc></audio></speak>';
      break;
+    case "one":
+      speech = '<speak><audio src = '+track+'><desc>One More Time</desc></audio></speak>';
+     break; 
+    case "describe one":
+      speech = '<speak>Track name : One More Time</speak>';
+      break;
   }
 
   

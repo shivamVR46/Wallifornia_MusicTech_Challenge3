@@ -41,7 +41,7 @@ restService.post("/getSongByName", function(req, res) {
      speech = '<speak><audio src="https://cdns-preview-b.dzcdn.net/stream/c-b2e0166bba75a78251d6dca9c9c3b41a-7.mp3"><desc>deezer stream</desc></audio></speak>';
      break;
     case "one":
-      speech = '<speak><audio src = '+track+'><desc>One More Time</desc></audio></speak>';
+      speech = '<speak><audio src = "'+track+'"><desc>One More Time</desc></audio></speak>';
      break; 
     case "describe one":
       speech = '<speak>Track name : One More Time</speak>';

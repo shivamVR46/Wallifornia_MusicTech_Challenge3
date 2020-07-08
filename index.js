@@ -45,15 +45,16 @@ restService.post("/getSongByName", function(req, res) {
   // const speech = "test 1.0"
   var speech ="";
   var trackId="";
-  request('https://api.deezer.com/track/3135553', function(err, res2, body) {
+  trackId = request('https://api.deezer.com/track/3135553', function(err, res2, body) {
     //console.log('https://api.deezer.com/track/'+req.params.id);
-    if (err) console.error(err)
+    if (err) trackId = "error";
     else {
         var jsonObj = JSON.parse(body);
-        trackId = jsonObj["title"];
+        //trackId = jsonObj["title"];
       //console.log(jsonObj['artist']['name']);
       //console.log(jsonObj['album']['title']);
       //console.log(jsonObj['preview']);
+      return jsonObj["title"];
     }
 });
 

@@ -43,10 +43,10 @@ restService.post("/getSongByName", function(req, res) {
     case "music":
      speech = '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg"><desc>a cat purring</desc></audio></speak>';
      break;
-    case "too long":
-      speech = '<speak><audio src="'+trackThree+'"><desc>Too long</audio></speech>'; 
+    case "too ":
+      speech = '<speak><audio src= "'+trackThree+'"><desc>Too long</desc></audio></speech>'; 
       break;
-    case "describe too long":
+    case "describe too ":
       speech =  '<speak>Track name : '+trackNameThree+' by Artist name : '+artistThree+' from Album : '+albumThree+' </speak>';
     case "other":     
      speech = '<speak><audio src="https://cdns-preview-b.dzcdn.net/stream/c-b2e0166bba75a78251d6dca9c9c3b41a-7.mp3"><desc>deezer stream</desc></audio></speak>';
@@ -60,7 +60,7 @@ restService.post("/getSongByName", function(req, res) {
     case "superheros":
       speech = '<speak><audio src = "'+trackTwo+'"><desc>Superheros</desc></audio></speak>';  
       break;
-    case " describe superheros":
+    case "describe superheros":
       speech = '<speak>Track name : '+trackNameTwo+' by Artist name : '+artistTwo+' from Album : '+albumTwo+'</speak>';
       break;
 

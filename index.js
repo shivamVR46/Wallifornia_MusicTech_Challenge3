@@ -15,11 +15,11 @@ restService.use(bodyParser.json());
 
 restService.post("/getSongByName", function(req, res) {
 
- // var speech = req.body.queryResult && req.body.queryResult.parameters && req.body.queryResult.parameters.song ?
-  //              "Shivam" : "Sadiq";
+ var speech = req.body.queryResult && req.body.queryResult.parameters && req.body.queryResult.parameters.song ?
+               "Shivam" : "Sadiq";
 
-  const speech = 
-  '<speak><audio src="https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3"><desc>a cat purring</desc></audio></speak>';
+  // const speech = 
+  // '<speak><audio src="https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3"><desc>a cat purring</desc></audio></speak>';
 
   //                new Audio('file:///D://file_example_MP3_700KB.mp3') : "No such song";
 
@@ -45,9 +45,9 @@ restService.post("/getSongByName", function(req, res) {
   };
 
   return res.json({
-    //payload: speechResponse,
+    payload: speechResponse,
     //data: speechResponse,
-   // fulfillmentText: speech,
+   fulfillmentText: speech,
     speech: speech,
     displayText: speech,
     source: "webhook-echo-sample"

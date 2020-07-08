@@ -20,7 +20,7 @@ restService.post("/getSongByName", function(req, res) {
   
   var speech ="";
 
-  switch(req.body.queryResult.parameters.song.toLowerCase()){
+  switch(req.body.result.parameters.song.toLowerCase()){
     case "music":
      speech = '<speak><audio src="https://cdns-preview-b.dzcdn.net/stream/c-b2e0166bba75a78251d6dca9c9c3b41a-7.mp3"><desc>a cat purring</desc></audio></speak>';
     case "other":     
@@ -51,9 +51,9 @@ restService.post("/getSongByName", function(req, res) {
   // };
 
   return res.json({
-    payload: speechResponse,
+    // payload: speechResponse,
     //data: speechResponse,
-   fulfillmentText: speech,
+  //  fulfillmentText: speech,
     speech: speech,
     displayText: speech,
     source: "webhook-echo-sample"

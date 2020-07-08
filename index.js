@@ -18,7 +18,7 @@ restService.post("/getSongByName", function(req, res) {
     var speech = req.body.queryResult && req.body.queryResult.parameters && req.body.queryResult.parameters.song ?
                     "Hello" :"Hello 2";
                 //  new Audio('file:///D://file_example_MP3_700KB.mp3') : "No such song";
-  
+
   var speechResponse = {
     google: {
       expectUserResponse: true,
@@ -43,3 +43,7 @@ restService.post("/getSongByName", function(req, res) {
     source: "TEST11-MASTER"
   });
 });
+
+restService.listen(process.env.PORT || 8000, function() {
+    console.log("Server up and listening");
+  });

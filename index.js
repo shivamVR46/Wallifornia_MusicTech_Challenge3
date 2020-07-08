@@ -20,14 +20,14 @@ restService.post("/getSongByName", function(req, res) {
 
   // const speech = '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg"><desc>a cat purring</desc></audio></speak>';
   // const speech = "test 1.0"
-  var speech1 ="";
+  var speech ="";
 
   switch(req.body.queryResult.parameters.song){
     case "music":
-     speech1 = '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg"><desc>a cat purring</desc></audio></speak>';
+     speech = '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg"><desc>a cat purring</desc></audio></speak>';
      break;
     case "other":     
-     speech1 = '<speak><audio><desc>a cat purring</desc></audio></speak>';
+     speech = '<speak><audio><desc>a cat purring</desc></audio></speak>';
      break;
   }
 

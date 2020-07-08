@@ -30,20 +30,17 @@ restService.post("/getSongByName", function(req, res) {
   
     
     case "music":
-     speech = '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg"><desc>a cat purring</desc></audio></speak>';
-    
-     break;
+        speech = '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg"><desc>a cat purring</desc></audio></speak>';
+        break;
     case "too long":
-      speech = '<speak><audio src="https://cdns-preview-d.dzcdn.net/stream/c-ddf495316e2afbe4327d9a6e17840a69-7.mp3"><desc> Too Long</desc></audio></speech>';
-    
-      break;
+        speech = '<speak><audio src="https://cdns-preview-d.dzcdn.net/stream/c-ddf495316e2afbe4327d9a6e17840a69-7.mp3"><desc> Too Long</desc></audio></speech>';
+        break;
     case "dz":     
-     speech = '<speak><audio src="https://cdns-preview-b.dzcdn.net/stream/c-b2e0166bba75a78251d6dca9c9c3b41a-7.mp3"><desc>deezer stream</desc></audio></speak>';
-  
-     break;
+        speech = '<speak><audio src="https://cdns-preview-b.dzcdn.net/stream/c-b2e0166bba75a78251d6dca9c9c3b41a-7.mp3"><desc>deezer stream</desc></audio></speak>';
+        break;
 
 
-  }
+      }
 
 
   

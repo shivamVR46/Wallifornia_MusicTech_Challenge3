@@ -23,29 +23,47 @@ restService.post("/getSongByName", function(req, res) {
   // const speech = "test 1.0"
   var speech ="";
 
-  var trackName = "One More Time";
+  var trackNameOne = "One More Time";
   var artist = "Daft Punk";
   var album = "Discovery";
-  var track = "https://cdns-preview-e.dzcdn.net/stream/c-e77d23e0c8ed7567a507a6d1b6a9ca1b-9.mp3";
+  var trackOne = "https://cdns-preview-e.dzcdn.net/stream/c-e77d23e0c8ed7567a507a6d1b6a9ca1b-9.mp3";
   
-  
+  var trackNameTwo = "Superheroes";
+  var artistTwo = "Daft Punk";
+  var albumTwo = "Heroes";
+  var trackTwo = "https://cdns-preview-3.dzcdn.net/stream/c-3d8caae0a1c59f417f31bb747c43818b-7.mp3";
 
+  var trackNameThree = "Superheroes";
+  var artistThree = "Daft Punk";
+  var albumThree = "Heroes";
+  var trackThree = "https://cdns-preview-3.dzcdn.net/stream/c-3d8caae0a1c59f417f31bb747c43818b-7.mp3";
+
+  
   switch(req.body.queryResult.parameters.song){
     case "music":
      speech = '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg"><desc>a cat purring</desc></audio></speak>';
      break;
     case "too long":
-      speech = '<speak><audio src="https://cdns-preview-d.dzcdn.net/stream/c-ddf495316e2afbe4327d9a6e17840a69-7.mp3"><desc>Too long</audio></speech>'; 
+      speech = '<speak><audio src="'+trackThree+'"><desc>Too long</audio></speech>'; 
       break;
+    case "describe too long":
+      speech =  '<speak>Track name : '+trackNameThree+' by Artist name : '+artistThree+' from Album : '+albumThree+' </speak>';
     case "other":     
      speech = '<speak><audio src="https://cdns-preview-b.dzcdn.net/stream/c-b2e0166bba75a78251d6dca9c9c3b41a-7.mp3"><desc>deezer stream</desc></audio></speak>';
      break;
     case "one":
-      speech = '<speak><audio src = "'+track+'"><desc>One More Time</desc></audio></speak>';
+      speech = '<speak><audio src = "'+trackOne+'"><desc>One More Time</desc></audio></speak>';
      break; 
     case "describe one":
-      speech = '<speak>Track name : One More Time</speak>';
+      speech = '<speak>Track name : '+trackNameOne+' by Artist name : '+artist+' from Album : '+album+' </speak>';
       break;
+    case "superheros":
+      speech = '<speak><audio src = "'+trackTwo+'"><desc>Superheros</desc></audio></speak>';  
+      break;
+    case " describe superheros":
+      speech = '<speak>Track name : '+trackNameTwo+' by Artist name : '+artistTwo+' from Album : '+albumTwo+'</speak>';
+      break;
+
   }
 
   

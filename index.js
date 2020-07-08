@@ -13,23 +13,6 @@ restService.use(
 
 restService.use(bodyParser.json());
 
-function getJSON(callback) {
-  request('https://api.deezer.com/track/3135553', function(err, res2, body) {
-    //console.log('https://api.deezer.com/track/'+req.params.id);
-    if (err) trackId = "error";
-    else {
-        var jsonObj = JSON.parse(body);
-        //trackId = jsonObj["title"];
-      //console.log(jsonObj['artist']['name']);
-      //console.log(jsonObj['album']['title']);
-      //console.log(jsonObj['preview']);
-      //trackId =  "jsonObj[title]";
-      callback(null, JSON.parse(body))
-    }
-});
-}
-
-
 
 restService.post("/getSongByName", function(req, res) {
 
@@ -40,7 +23,7 @@ restService.post("/getSongByName", function(req, res) {
   // const speech = "test 1.0"
   var speech ="";
 
-  var track = "One More Time";
+  var trackName = "One More Time";
   var artist = "Daft Punk";
   var album = "Discovery";
   var track = "https://cdns-preview-e.dzcdn.net/stream/c-e77d23e0c8ed7567a507a6d1b6a9ca1b-9.mp3";
@@ -94,7 +77,7 @@ restService.post("/getSongByName", function(req, res) {
 
   return res.json({
     payload: speechResponse,
-    data: trackId,
+    // data: trackId,
     fulfillmentText: speech,
     speech: speech,
     displayText: speech,

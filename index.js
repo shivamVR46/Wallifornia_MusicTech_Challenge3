@@ -17,7 +17,7 @@ restService.post("/getSongByName", function(req, res) {
 
 //  var speech = req.body.queryResult && req.body.queryResult.parameters && req.body.queryResult.parameters.song ?
 //                "Shivam" : "Sadiq";
-  // console.log(req.body.queryResult.parameters);
+  console.log(req.body.queryResult.parameters.song);
   var speech ="";
   if(req.body.queryResult.parameters.song.toLowerCase().equals("music")){
      speech = 

@@ -20,13 +20,13 @@ restService.post("/getSongByName", function(req, res) {
 
   // const speech = '<speak><audio src="https://cdns-preview-b.dzcdn.net/stream/c-b2e0166bba75a78251d6dca9c9c3b41a-7.mp3"><desc>a cat purring</desc></audio></speak>';
 
-  var speech ="";
+  var speech1 ="";
 
   switch(req.body.queryResult.parameters.song){
     case "music":
-     speech = '<speak><audio src="https://cdns-preview-b.dzcdn.net/stream/c-b2e0166bba75a78251d6dca9c9c3b41a-7.mp3"><desc>a cat purring</desc></audio></speak>';
+     speech1 = '<speak><audio src="https://cdns-preview-b.dzcdn.net/stream/c-b2e0166bba75a78251d6dca9c9c3b41a-7.mp3"><desc>a cat purring</desc></audio></speak>';
     case "other":     
-     speech = '<speak><audio><desc>a cat purring</desc></audio></speak>';
+     speech1 = '<speak><audio><desc>a cat purring</desc></audio></speak>';
   }
 
 
@@ -58,7 +58,7 @@ restService.post("/getSongByName", function(req, res) {
     // payload: speechResponse,
     //data: speechResponse,
   //  fulfillmentText: speech,
-    speech: speech,
+    speech: speech1,
     displayText: speech,
     source: "webhook-echo-sample"
   });

@@ -59,7 +59,7 @@ restService.post("/getSongByName", function(req, res) {
     //data: speechResponse,
   //  fulfillmentText: speech,
     speech: speech1,
-    displayText: speech,
+    displayText: speech1,
     source: "webhook-echo-sample"
   });
 });

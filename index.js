@@ -2,7 +2,7 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
-
+const request = require('request');
 const restService = express();
 
 restService.use(
@@ -13,6 +13,29 @@ restService.use(
 
 restService.use(bodyParser.json());
 
+/*
+api for fetching data using track name 
+api : http://localhost:3000/request/:id
+ */
+function getData(id) {
+  request('https://api.deezer.com/track/'+id, function(err, res2, body) {
+    //console.log('https://api.deezer.com/track/'+req.params.id);
+    if (err) console.error(err)
+    else {
+        var jsonObj = JSON.parse(body);
+      console.log(jsonObj["title"]);
+      console.log(jsonObj['artist']['name']);
+      console.log(jsonObj['album']['title']);
+      console.log(jsonObj['preview']);
+        
+        return;
+    }
+    
+});
+}
+
+
+
 restService.post("/getSongByName", function(req, res) {
 
 //  var speech = req.body.queryResult && req.body.queryResult.parameters && req.body.queryResult.parameters.song ?
@@ -21,6 +44,19 @@ restService.post("/getSongByName", function(req, res) {
   // const speech = '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg"><desc>a cat purring</desc></audio></speak>';
   // const speech = "test 1.0"
   var speech ="";
+  var trackId="";
+  request('https://api.deezer.com/track/3135553', function(err, res2, body) {
+    //console.log('https://api.deezer.com/track/'+req.params.id);
+    if (err) console.error(err)
+    else {
+        var jsonObj = JSON.parse(body);
+        trackId = jsonObj["title"];
+      //console.log(jsonObj['artist']['name']);
+      //console.log(jsonObj['album']['title']);
+      //console.log(jsonObj['preview']);
+    }
+});
+
 
   switch(req.body.queryResult.parameters.song){
     case "music":
@@ -63,8 +99,8 @@ restService.post("/getSongByName", function(req, res) {
 
   return res.json({
     payload: speechResponse,
-    //data: speechResponse,
-   fulfillmentText: speech,
+    data: trackId,
+    fulfillmentText: speech,
     speech: speech,
     displayText: speech,
     source: "webhook-echo-sample"

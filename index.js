@@ -55,9 +55,9 @@ restService.post("/getSongByName", function(req, res) {
   // };
 
   return res.json({
-    // payload: speechResponse,
+    payload: speechResponse,
     //data: speechResponse,
-  //  fulfillmentText: speech,
+   fulfillmentText: speech,
     speech: speech,
     displayText: speech,
     source: "webhook-echo-sample"

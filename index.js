@@ -39,11 +39,12 @@ restService.post("/getSongByName", function(req, res) {
   // const speech = '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg"><desc>a cat purring</desc></audio></speak>';
   // const speech = "test 1.0"
   var speech ="";
-  var trackId = "";
+  var trackId = getJSON(err,wowUsage);
   
-  getJSON(function(err, wowUsage) {    
-    trackId =  wowUsage;
-  });
+  
+  // getJSON(function(err, wowUsage) {    
+  //   trackId =  wowUsage;
+  // });
 
   switch(req.body.queryResult.parameters.song){
     case "music":

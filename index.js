@@ -13,7 +13,7 @@ restService.use(
 
 restService.use(bodyParser.json());
 
-var history = [];
+// var history = [];
 
 restService.post("/getSongByName", function(req, res) {
 
@@ -83,50 +83,50 @@ restService.post("/getSongByName", function(req, res) {
   });
 });
 
-restService.post("/discoverMusic", function(req, res){
-  var speech ="";
-  var musicToDiscover = "";
-  var str = "Looking at your playing history you can discover ";
-  switch(req.body.queryResult.parameters.discover){ 
-    case "discover new song":
-      if(history.indexOf("cartoon")==-1){
-        musicToDiscover = "cartoon";
-      }
-      else if(history.indexOf("too_long")==-1){
-        musicToDiscover = "too long";
-      }
-      else if(history.indexOf("dz")==-1){
-        musicToDiscover = "dz";
-      }
-      speech =  str.concat(musicToDiscover);
-  }
+// restService.post("/discoverMusic", function(req, res){
+//   var speech ="";
+//   var musicToDiscover = "";
+//   var str = "Looking at your playing history you can discover ";
+//   switch(req.body.queryResult.parameters.discover){ 
+//     case "discover new song":
+//       if(history.indexOf("cartoon")==-1){
+//         musicToDiscover = "cartoon";
+//       }
+//       else if(history.indexOf("too_long")==-1){
+//         musicToDiscover = "too long";
+//       }
+//       else if(history.indexOf("dz")==-1){
+//         musicToDiscover = "dz";
+//       }
+//       speech =  str.concat(musicToDiscover);
+//   }
 
 
-  var speechResponse = {  
-    google: {
-      expectUserResponse: true,
-      richResponse: {
-        items: [
-          {
-            simpleResponse: {
-              textToSpeech: speech
-            }
-          }
-        ]
-      }
-    }
-  };
+//   var speechResponse = {  
+//     google: {
+//       expectUserResponse: true,
+//       richResponse: {
+//         items: [
+//           {
+//             simpleResponse: {
+//               textToSpeech: speech
+//             }
+//           }
+//         ]
+//       }
+//     }
+//   };
 
-  return res.json({
-    payload: speechResponse,
-    //data: speechResponse,
-   fulfillmentText: speech,
-    speech: speech,
-    displayText: speech,
-    source: "webhook-echo-sample"
-  });
+//   return res.json({
+//     payload: speechResponse,
+//     //data: speechResponse,
+//    fulfillmentText: speech,
+//     speech: speech,
+//     displayText: speech,
+//     source: "webhook-echo-sample"
+//   });
   
-});
+// });
 
 restService.listen(process.env.PORT || 8000, function() {
     console.log("Server up and listening");

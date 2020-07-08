@@ -34,7 +34,7 @@ restService.post("/getSongByName", function(req, res) {
     }
   };
 
-  return res.json()({
+  return res.json({
     payload: speechResponse,
     //data: speechResponse,
     fulfillmentText: speech,

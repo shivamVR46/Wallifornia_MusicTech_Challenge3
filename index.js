@@ -17,9 +17,9 @@ restService.post("/getSongByName", function(req, res) {
 
 //  var speech = req.body.queryResult && req.body.queryResult.parameters && req.body.queryResult.parameters.song ?
 //                "Shivam" : "Sadiq";
-  console.log(req.body.queryResult.parameters.song);
+  console.log(req.body.result.parameters.song);
   var speech ="";
-  if(req.body.queryResult.parameters.song.toLowerCase().equals("music")){
+  if(req.body.result.parameters.song.toLowerCase().equals("music")){
      speech = 
   '<speak><audio src="https://cdns-preview-b.dzcdn.net/stream/c-b2e0166bba75a78251d6dca9c9c3b41a-7.mp3"><desc>a cat purring</desc></audio></speak>';
   }

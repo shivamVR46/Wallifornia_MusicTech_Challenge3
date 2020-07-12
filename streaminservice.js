@@ -16,6 +16,9 @@ function getMusicName(ID){
   //return music;
 }
 
+function getAccountDetails(ID){
+}
+
 // prepare documents data
 const documents = [
   

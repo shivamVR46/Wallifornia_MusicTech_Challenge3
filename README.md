@@ -8,7 +8,10 @@ We have also provided our own music backend streaming services which is also ben
 
 Tech Stack:
 
-Backend: Node JS
+Backend: Node JS                                 
+
 WebHook Cloud Environment: Heroku
+
 Voice assistant service: google voice assistant using DialogFlow
+
 Hardware: Google Home
